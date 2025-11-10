@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Strandresort aan zee - Boek uw strandvakantie">
+  <title>Beach Resort - Uw Droomvakantie aan Zee</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #2c4a5e;
+      background: #f0f8ff;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #0c7fb0 0%, #0a5d8a 100%);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(12, 127, 176, 0.3);
+    }
+    
+    .logo {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      color: #b3e5fc;
+      letter-spacing: 1px;
+    }
+    
+    nav {
+      background: #0a5d8a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+    
+    nav a:hover {
+      background: rgba(255,255,255,0.15);
+      color: #b3e5fc;
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(12, 127, 176, 0.3), rgba(12, 127, 176, 0.3)), 
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230c7fb0"/></svg>');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 8rem 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      font-weight: bold;
+    }
+    
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: #ff6b35;
+      color: white;
+      padding: 1rem 2.5rem;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+    }
+    
+    .cta-button:hover {
+      background: #ff8555;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(12, 127, 176, 0.1);
+      transition: all 0.3s;
+      border-bottom: 4px solid #0c7fb0;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(12, 127, 176, 0.2);
+    }
+    
+    .feature-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-card h3 {
+      color: #0c7fb0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .feature-card p {
+      color: #5a7a8e;
+      line-height: 1.7;
+    }
+    
+    .beach-info {
+      background: linear-gradient(135deg, #b3e5fc 0%, #81d4fa 100%);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    
+    .beach-info h2 {
+      color: #0a5d8a;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .beach-info p {
+      color: #2c4a5e;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .booking-section {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(12, 127, 176, 0.15);
+      margin: 3rem 0;
+    }
+    
+    .booking-section h2 {
+      text-align: center;
+      color: #0c7fb0;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+    
+    .booking-widget-placeholder {
+      min-height: 600px;
+      border: 2px dashed #0c7fb0;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f8ff;
+    }
+    
+    .booking-widget-placeholder p {
+      color: #5a7a8e;
+      font-size: 1.1rem;
+    }
+    
+    .beach-activities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    
+    .activity-tag {
+      background: #0c7fb0;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    footer {
+      background: #0a5d8a;
+      color: #b3e5fc;
+      padding: 3rem 2rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-section h3 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .footer-section p, .footer-section a {
+      color: #b3e5fc;
+      text-decoration: none;
+      line-height: 2;
+    }
+    
+    .footer-section a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #0c7fb0;
+      color: #81d4fa;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
+      nav {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🏖️ Beach Resort</div>
+    <p class="tagline">Zon, Zee & Strand - Uw Perfecte Strandvakantie</p>
+  </header>
+  
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#accommodaties">Strand Huisjes</a>
+    <a href="#strand">Het Strand</a>
+    <a href="#activiteiten">Activiteiten</a>
+    <a href="#boeken">Boeken</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <section class="hero">
+    <h1>Wakker Worden met Zeezicht</h1>
+    <p>Direct aan het strand met privé toegang tot de mooiste kust van Nederland</p>
+    <a href="#boeken" class="cta-button">Boek Nu ☀️</a>
+  </section>
+  
+  <div class="container">
+    <div class="beach-info">
+      <h2>🌊 Direct Aan Het Strand</h2>
+      <p>
+        Onze unieke ligging direct aan het strand biedt u de ultieme strandbeleving. 
+        Slechts 50 meter van uw accommodatie naar het witte zand en de blauwe zee!
+      </p>
+    </div>
+    
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <h3>Luxe Strandhuisjes</h3>
+        <p>Modern ingerichte accommodaties met zeezicht en groot terras</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌅</div>
+        <h3>Privé Strandtoegang</h3>
+        <p>Direct vanaf uw huisje het strand op - exclusief voor onze gasten</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🍹</div>
+        <h3>Beach Club</h3>
+        <p>Strandpaviljoen met restaurant, bar en loungebedden</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🚴</div>
+        <h3>Watersport</h3>
+        <p>Surf-, zeil- en kitesurf lessen en materiaal verhuur</p>
+      </div>
+    </div>
+    
+    <h2 style="text-align: center; color: #0c7fb0; font-size: 2rem; margin: 3rem 0 1.5rem;">Strand Activiteiten</h2>
+    <div class="beach-activities">
+      <div class="activity-tag">🏄 Surfen</div>
+      <div class="activity-tag">⛵ Zeilen</div>
+      <div class="activity-tag">🪁 Kitesurfen</div>
+      <div class="activity-tag">🐚 Strandwandeling</div>
+      <div class="activity-tag">🏐 Beach Volleybal</div>
+      <div class="activity-tag">🎣 Vissen</div>
+    </div>
+    
+    <section id="boeken" class="booking-section">
+      <h2>Boek Uw Strandvakantie</h2>
+      
+      <!-- PLAATS HIER UW IFRAME -->
+      <div class="booking-widget-placeholder">
+        <p>Plaats hier uw booking widget iframe</p>
+      </div>
+      <!-- EINDE IFRAME PLACEHOLDER -->
+      
+    </section>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Strandweg 88<br>5678 EF Zeedorp<br>Tel: +31 (0)70 345 6789<br>info@beachresort.nl</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Openingstijden</h3>
+        <p>Receptie<br>Ma-Zo: 08:00 - 22:00<br><br>Beach Club<br>10:00 - 00:00</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Volg Ons</h3>
+        <p>
+          <a href="#">Instagram</a><br>
+          <a href="#">Facebook</a><br>
+          <a href="#">YouTube</a><br>
+          <a href="#">TikTok</a>
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Informatie</h3>
+        <p>
+          <a href="#">Algemene Voorwaarden</a><br>
+          <a href="#">Privacy Policy</a><br>
+          <a href="#">FAQ</a><br>
+          <a href="#">Weerbericht</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2024 Beach Resort. Alle rechten voorbehouden. | Uw stranddroom wordt werkelijkheid</p>
+    </div>
+  </footer>
+</body>
+</html>
