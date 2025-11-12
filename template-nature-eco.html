@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eco-vriendelijk natuurresort - Duurzaam genieten van de natuur">
+  <title>Nature Eco Resort - Boek Uw Natuuravontuur</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #2d3e2d;
+      background: #f9fbf7;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #4a7c4e 0%, #2d5a31 100%);
+      color: #f5f9f5;
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .logo {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #e8f5e8;
+    }
+    
+    .tagline {
+      font-size: 1.1rem;
+      color: #d4e7d4;
+    }
+    
+    nav {
+      background: #3d6640;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    nav a {
+      color: #e8f5e8;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: #b8e6b8;
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(45, 94, 49, 0.5), rgba(45, 94, 49, 0.5)), 
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a7c4e"/></svg>');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 8rem 2rem;
+    }
+    
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    .eco-values {
+      background: linear-gradient(135deg, #e8f5e8 0%, #d4e7d4 100%);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      border: 3px solid #4a7c4e;
+    }
+    
+    .eco-values h2 {
+      text-align: center;
+      color: #2d5a31;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(74, 124, 78, 0.15);
+      transition: transform 0.3s;
+      border-left: 4px solid #4a7c4e;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(74, 124, 78, 0.25);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-card h3 {
+      color: #2d5a31;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    
+    .feature-card p {
+      color: #4a6b4a;
+      line-height: 1.6;
+    }
+    
+    .booking-section {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(74, 124, 78, 0.12);
+      margin: 3rem 0;
+    }
+    
+    .booking-section h2 {
+      text-align: center;
+      color: #2d5a31;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .booking-widget-placeholder {
+      min-height: 600px;
+      border: 2px dashed #4a7c4e;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9fbf7;
+    }
+    
+    .booking-widget-placeholder p {
+      color: #5a7a5a;
+      font-size: 1.1rem;
+    }
+    
+    .sustainability-badge {
+      background: #4a7c4e;
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .sustainability-badge h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    footer {
+      background: #2d5a31;
+      color: #d4e7d4;
+      padding: 3rem 2rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .footer-section h3 {
+      color: #b8e6b8;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-section p, .footer-section a {
+      color: #a8d6a8;
+      text-decoration: none;
+      line-height: 2;
+    }
+    
+    .footer-section a:hover {
+      color: #e8f5e8;
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #4a7c4e;
+      color: #a8d6a8;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      nav {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🌿 Nature Eco Resort</div>
+    <p class="tagline">Duurzaam Genieten in Harmonie met de Natuur</p>
+  </header>
+  
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#accommodaties">Eco Lodges</a>
+    <a href="#duurzaamheid">Duurzaamheid</a>
+    <a href="#activiteiten">Activiteiten</a>
+    <a href="#boeken">Boeken</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <section class="hero">
+    <h1>Ontdek de Kracht van de Natuur</h1>
+    <p>100% duurzaam overnachten in onze eco-vriendelijke accommodaties</p>
+  </section>
+  
+  <div class="container">
+    <div class="eco-values">
+      <h2>Onze Groene Waarden</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto; color: #2d5a31;">
+        Wij geloven in een betere toekomst. Daarom zijn al onze accommodaties gebouwd met 
+        natuurlijke materialen, gebruiken we 100% groene energie en compenseren we alle CO2-uitstoot.
+      </p>
+    </div>
+    
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">♻️</div>
+        <h3>100% Duurzaam</h3>
+        <p>Volledig CO2-neutraal resort met eigen zonne-energie en regenwater opvang</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌳</div>
+        <h3>Natuurlijke Materialen</h3>
+        <p>Accommodaties gebouwd van lokaal hout en natuurlijke isolatiematerialen</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🥬</div>
+        <h3>Bio Restaurant</h3>
+        <p>100% biologisch eten uit eigen moestuin en van lokale boeren</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🦋</div>
+        <h3>Natuurbeleving</h3>
+        <p>Middenin natuurgebied met wandel- en fietspaden door het bos</p>
+      </div>
+    </div>
+    
+    <div class="sustainability-badge">
+      <h3>🏅 Erkend met het Groene Sleutel Keurmerk</h3>
+      <p>Officieel erkend als een van de meest duurzame resorts van Nederland</p>
+    </div>
+    
+    <section id="boeken" class="booking-section">
+      <h2>Boek Uw Natuuravontuur</h2>
+      
+      <!-- PLAATS HIER UW IFRAME -->
+      <div class="booking-widget-placeholder">
+        <p>Plaats hier uw booking widget iframe</p>
+      </div>
+      <!-- EINDE IFRAME PLACEHOLDER -->
+      
+    </section>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Bosweg 42<br>7890 CD Natuurdorp<br>Tel: +31 (0)50 234 5678<br>info@natureecoResort.nl</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Openingstijden</h3>
+        <p>Receptie<br>Ma-Vr: 08:00 - 20:00<br>Za-Zo: 09:00 - 18:00</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Volg Ons</h3>
+        <p>
+          <a href="#">Instagram</a><br>
+          <a href="#">Facebook</a><br>
+          <a href="#">TikTok</a>
+        </p>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2024 Nature Eco Resort. Alle rechten voorbehouden. | Duurzaam ondernemen sinds 2015</p>
+    </div>
+  </footer>
+</body>
+</html>
